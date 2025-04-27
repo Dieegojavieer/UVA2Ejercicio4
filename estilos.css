@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+} 
+
+header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header .header-content {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+main {
+    padding: 20px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.flex-item {
+    width: 300px;
+    text-align: center;
+}
+.flex-item img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+.grid-item {
+    text-align: center;
+}
+.grid-item img {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+}
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.obra {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.obra img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.obra p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Las obras grandes ocupan dos columnas */
+.grande {
+    grid-column: span 2;
+}
+
+/* Las obras altas ocupan una columna y 2 filas */
+.alta {
+    grid-row: span 2;
+    height: 100%;
+}
+
+.alta img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Efecto hover */
+.obra:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive para celulares */
+@media (max-width: 600px) {
+    .grande {
+        grid-column: span 1;
+    }
+    .alta {
+        grid-row: span 1;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+    font-size: 14px;
+}
